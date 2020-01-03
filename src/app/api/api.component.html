@@ -19,12 +19,25 @@
   <div>
     <ul class="list-group">
       <li class="list-group-item mt-2">
-        <p><img class="" src="{{ playerInfo.imageURl }}" /></p>
-        <h1 class="text-uppercase display-5 font-weight">
+         <p>
+          <img
+            class="img-fluid rounded-circle"
+            src="{{ playerInfo.imageURL }}"
+          />
+        </p>
+        <h1
+          class="text-uppercase
+        display-5 font-weight-bold"
+        >
           {{ playerInfo.fullName }}
         </h1>
-        <p>{{ playerInfo.pid }}</p>
-        <p>{{ playerInfo.country }}</p>
+        <p class="float-right badge badge-danger">
+          {{ playerInfo.currentAge }}
+        </p>
+        <p class="badge badge-dark">
+          <span>Player Id</span>{{ playerInfo.pid }}</p>
+        <p class="float-right badge badge-success">
+          {{ playerInfo.country }}</p>
         <p>{{ playerInfo.profile }}</p>
       </li>
     </ul>
