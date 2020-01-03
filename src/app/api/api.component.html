@@ -1,0 +1,32 @@
+<div class="container" style="position: absolute;">
+  <div class="col-md-8 offset-2 mt-2">
+    <div class="form-group">
+      <h1
+        class="display-5 mt-2 text-uppercase text-success text-center font-weight-bold"
+      >
+        Find Players
+      </h1>
+    </div>
+    <input
+      type="text"
+      class="form-control bg-light"
+      placeholder="Search cricket Players😀"
+      #player
+      (keyup.enter)="searchPlayer(player.value)"
+    />
+  </div>
+
+  <div>
+    <ul class="list-group">
+      <li class="list-group-item mt-2">
+        <p><img class="" src="{{ playerInfo.imageURl }}" /></p>
+        <h1 class="text-uppercase display-5 font-weight">
+          {{ playerInfo.fullName }}
+        </h1>
+        <p>{{ playerInfo.pid }}</p>
+        <p>{{ playerInfo.country }}</p>
+        <p>{{ playerInfo.profile }}</p>
+      </li>
+    </ul>
+  </div>
+</div>

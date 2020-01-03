@@ -1,0 +1,56 @@
+<button class="btn btn-primary" (click)="addNewuser()">Add new User</button>
+
+<table class="table table-bordered table-hover table-dark">
+  <tr>
+    <th>id</th>
+    <th>Name</th>
+    <th>Photo</th>
+    <th>Age</th>
+    <th>Company</th>
+    <th>Salary</th>
+    <th>Designation</th>
+    <th>Location</th>
+    <th>Gender</th>
+    <th>Education</th>
+    <th>DeleteUser</th>
+  </tr>
+
+  <tr *ngFor="let user of users; index as i">
+    <td>{{ i + 1 }}</td>
+    <td>{{ user.name }}</td>
+    <td>
+      <img
+        class="img-fluid rounded-circle"
+        style="width: 100px; height: 100px;"
+        src="{{ user.photo }}"
+        alt="{{ user.name }}"
+      />
+    </td>
+    <td>{{ user.age }}</td>
+    <td>{{ user.company }}</td>
+    <td>{{ user.salary }}</td>
+    <td>{{ user.designation }}</td>
+    <td>{{ user.location }}</td>
+    <td>{{ user.gender }}</td>
+    <td>{{ user.education }}</td>
+    <td>
+      <button class="btn btn-danger btn-sm" (click)="removeUser(user)">
+        Remove
+      </button>
+    </td>
+  </tr>
+</table>
+
+<!-- <h1>angular component here</h1>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let x of languages">{{ x }}</li>
+</ul> -->
+
+<!-- <div id="template">
+  <h1>I am a headline made with HTML</h1>
+  <p>
+    And I am a simple text paragraph. The color of this text is styled with CSS.
+    Click the button below to remove me through the power JavaScript.
+  </p>
+  <button>Hide the text above</button>
+</div> -->

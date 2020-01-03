@@ -1,0 +1,106 @@
+<div class="container">
+  <div class="form" red>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid vitae odit
+    dolorem error, dolore laborum labore similique expedita adipisci cupiditate
+    quidem sint debitis totam quasi libero aut voluptates sunt, nam praesentium
+    accusamus? Enim atque maxime doloribus iusto dicta, sequi in consequatur
+    illum deleniti facere dolorum. Vero nemo pariatur consequatur iusto!
+  </div>
+</div>
+
+<!----------------------------------- Attribute Directive------------------------------------------ -->
+
+<!-- <div class="container">
+  <ul class="list-group">
+    <li
+      class="list-group-item"
+      *ngFor="let user of users"
+      [ngStyle]="{ color: user.gender === 'male' ? 'red' : 'green' }"
+    >
+      {{ user.name }}
+      {{ user.age }}
+      {{ user.gender }}
+      {{ user.country }}
+    </li>
+  </ul>
+</div> -->
+
+<!-- <button [ngClass]="['btn', 'btn-danger', 'mt - 2']" (click)="toggleState()">
+  Add dynamic classes to div
+</button>
+
+<div [ngClass]="addDynamicClass()">
+  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et officiis
+  consectetur quia voluptatem, fugit suscipit hic quo quae nulla amet velit
+  explicabo quaerat accusamus, quisquam ipsum dicta cumque, reprehenderit
+  distinctio.
+</div> -->
+
+<!-- <button [ngClass]="'btn btn-dark'">BTN DARK</button> -->
+<!-- string way -->
+<!-- <button [ngClass]="['btn', 'btn-success']">Submit</button> -->
+<!-- array way -->
+<!-- <button [ngClass]="{ btn: true, 'btn-danger': true }">Btn danger</button> -->
+<!-- object way -->
+
+<!------------------------------------- structural directives------------------------------------------- -->
+
+<!-- <span [ngSwitch]="color">
+  <p *ngSwitchCase="'red'">
+    <span class="text-danger">red color here</span>
+  </p>
+
+  <p *ngSwitchCase="green">
+    <span class="text-success">green color here</span>
+  </p>
+
+  <p *ngSwitchDefault>
+    <span class="text-dark">no color display</span>
+  </p>
+</span> -->
+
+<!-- <div [hidden]="users.length == 0">users are here</div>
+<div [hidden]="users.length > 0">no users are here</div> -->
+
+<!-- <div *ngIf="users.length > 0; then usersList; else noUsersList"></div>
+
+ <ng-template #usersList>
+  <ul class="list-group">
+    <li
+      class="list-group-item mt-2"
+      *ngFor="
+        let user of users;
+        index as i;
+        even as isEven;
+        odd as isOdd;
+        first as isFirst;
+        last as isLast
+      "
+    >
+      <span class="badge badge-dark p-2 mr-2">{{ i + 1 }}</span>
+      {{ user }}
+      <span class="badge badge-success float-right" *ngIf="isEven">even</span>
+      <span class="badge badge-danger float-right" *ngIf="isOdd">odd</span>
+      <span class="badge badge-primary float-right" *ngIf="isFirst">first</span>
+      <span class="badge badge-dark float-right" *ngIf="isLast">last</span>
+    </li>
+  </ul>
+</ng-template>
+
+<ng-template #noUsersList>
+  <h1 class="text-danger">No user here</h1>
+</ng-template> -->
+
+<!-- <div>
+  <h1 class="text-success" *ngIf="users.length > 0">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let user of users">{{ user }}</li>
+    </ul>
+  </h1>
+</div>
+
+<div>
+  <h1 class="text-danger" *ngIf="users.length == 0">
+    no users are here
+  </h1>
+</div> -->

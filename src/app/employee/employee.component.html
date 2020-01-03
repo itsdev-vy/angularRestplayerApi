@@ -1,0 +1,91 @@
+<!-- TWO WAY DATA BINDING -----DIRECTIVE NAME IS ngModel -->
+<input
+  type="text"
+  class="form-control mt-2"
+  placeholder="enter name"
+  [(ngModel)]="username"
+/>
+<input
+  type="text"
+  class="form-control mt-2"
+  placeholder="enter email"
+  [(ngModel)]="email"
+/>
+<input
+  type="text"
+  class="form-control mt-2"
+  placeholder="enter phone number"
+  [(ngModel)]="phonenumber"
+/>
+<textarea
+  name=""
+  id=""
+  cols="30"
+  rows="10"
+  class="form-control"
+  [(ngModel)]="description"
+>
+</textarea>
+
+<h1>{{ username }}</h1>
+<h1>{{ email }}</h1>
+<h1>{{ phonenumber }}</h1>
+<h1>{{ description }}</h1>
+
+<!-- ngModel only works with form elements -->
+<!-- To use ngModule directive should import FormsModule in app.module.ts -->
+
+<!-- <input type="text" #email (keyup.enter)="enterEmail(email.value)" /> -->
+<!-- template reference variable -->
+
+<!-- <input
+  type="text"
+  (keyup.enter)="username($event)"
+  class="form-control mt-2"
+  placeholder="Enter USERNAME...."
+/> -->
+
+<!-- <button (click)="click()">Submit</button> -->
+<!-- Event listner -->
+
+<!-- <div [style.backgroundColor]="isActive ? 'red' : 'green'">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, excepturi?
+</div> -->
+<!-- style binding -->
+
+<!-- <table>
+  <tr>
+    <td [attr.colspan]="colSpan">colspan here</td>
+    <td>colspan here</td>
+  </tr>
+</table> -->
+<!-- attribute binding -->
+
+<!-- {{ isActive }}
+<button class="btn btn-danger mt-2" [class.active]="isActive">Submit</button> -->
+<!-- class binding -->
+
+<!--<img src="{{ImageUrl}}">-->
+<!--interpolation   -->
+
+<!-- <img [src]="ImageUrl" /> -->
+<!--property binding-->
+
+<!-- <ul class="list-group" *ngFor="let emp of employee">
+  <li class="list-group-item mt-2">Employee_Id : {{ emp.emp_id }}</li>
+  <li class="list-group-item mt-2"><img src="{{ emp.emp_photo }}" /></li>
+  <li class="list-group-item mt-2">Employee_Name : {{ emp.emp_name }}</li>
+  <li class="list-group-item mt-2">
+    Employee_Designation : {{ emp.emp_designation }}
+  </li>
+  <li class="list-group-item mt-2">Employee_Salary : {{ emp.emp_salary }}</li>
+  <li class="list-group-item mt-2">
+    Employee_Location : {{ emp.emp_location }}
+  </li>
+  <li class="list-group-item mt-2">
+    Employee_Education : {{ emp.emp_education }}
+  </li>
+  <li class="list-group-item mt-2">
+    Employee_Date-of-Join : {{ emp.emp_doj }}
+  </li>
+</ul> -->

@@ -1,0 +1,144 @@
+<!-- -----------------------------reactive form ------------------------------------------>
+<div class="container">
+  <div class="col-md-4 offset-4 card mt-4">
+    <!-- <h1 class="text-center text-uppercase mt-2 text-secondary display-6">
+      Reactive Form Register
+    </h1> -->
+    <ng-content select ="h1"></ng-content>
+
+    <form [formGroup]="form">
+      <div class="form-group">
+        <input
+          formControlName="username"
+          type="text"
+          class="form-control mt-2"
+          placeholder="username"
+        />
+        <!-- This is for validation -->
+        <div
+          class="text-danger mt-2"
+          *ngIf="username.touched && username.invalid"
+        >
+          <p *ngIf="username.errors.required">Username is required</p>
+          <p *ngIf="username.errors.minlength">
+            username should be minimum 3 characters
+          </p>
+          <p *ngIf="username.errors.pattern">username is not matching...</p>
+          <p *ngIf="username.errors.removeSpace">
+            username cannot contain space
+          </p>
+        </div>
+        <!-- This is for Validation -->
+      </div>
+
+      <div class="form-group">
+        <input
+          formControlName="password"
+          type="password"
+          class="form-control mt-2"
+          placeholder="password"
+        />
+        <div
+          class="text-danger mt-2"
+          *ngIf="password.touched && password.invalid"
+        >
+          <p *ngIf="password.errors.required">password is required</p>
+          <p *ngIf="password.errors.minlength">
+            password should be minimum 3 characters
+          </p>
+          <p *ngIf="password.errors.pattern">password is not matching...</p>
+        </div>
+      </div>
+
+      <!-- <button class="btn btn-success btn-block mt-2">Register</button> -->
+      <ng-content select="button"></ng-content>
+      <ng-content select="div"></ng-content>
+    </form>
+  </div>
+</div>
+
+<!-----------------------------------------------TEMPLATE DRIVEN FORM -------------------------------------------------------------------------- -->
+
+<!-- <div class="container">
+  <div class="col-md-4 offset-4 mt-2 card">
+    <div class="card-body">
+      <h1 class="display-5 text-center text-uppercase">Register</h1>
+      <form #form="ngForm" (ngSubmit)="submit(form)">
+        <div class="form-group">
+          <input
+            type="text"
+            placeholder="Enter username ..."
+            class="form-control"
+            ngModel
+            #Email="ngModel"
+            name="username"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            type="password"
+            placeholder="Enter password..."
+            class="form-control"
+            ngModel
+            name="password"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            type="email"
+            placeholder="username@email.com"
+            class="form-control"
+            ngModel
+            name="email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            type="text"
+            placeholder="phone number"
+            class="form-control"
+            ngModel
+            name="phonenumber"
+            required
+            maxlength="10"
+          />
+        </div>
+
+        <div class="form-group">
+          <label *ngFor="let gender of genderList">
+            <input
+              type="radio"
+              ngModel
+              name="gender"
+              value="{{ gender.name }}"
+            />
+            {{ gender.name }}
+          </label>
+        </div>
+
+        <div class="form-group">
+          <select name="country" class="form-control">
+            <option
+              *ngFor="let country of countryList; index as i"
+              [ngValue]="i + 1"
+            >
+              {{ country }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <button class=" btn btn-success btn-block" [disabled]="!form.valid">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> -->
