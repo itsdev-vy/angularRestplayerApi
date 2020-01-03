@@ -9,7 +9,7 @@ import { Component, OnInit } from "@angular/core";
 export class ApiComponent implements OnInit {
   private playerUrl =
     //"https://cricapi.com/api/playerFinder?apikey=tnBHcSn1PlM9tvBTySXn0g9cej83&name="
-    "https://cricapi.com/api/playerStats?apikey=tnBHcSn1PlM9tvBTySXn0g9cej83&pid";
+    "https://cricapi.com/api/playerStats?apikey=tnBHcSn1PlM9tvBTySXn0g9cej83&pid=";
   constructor(private http: HttpClient) {}
   playerInfo = [];
   searchPlayer(pid) {
